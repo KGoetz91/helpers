@@ -82,7 +82,16 @@ def load_grasp_data(filename,xmin=-np.inf,xmax=np.inf):
                     eq.append(float(data[3]))
                 except:
                     pass
-         
+            elif len(data) == 3:
+                try:
+                    x.append(float(data[0]))
+                    y.append(float(data[1]))
+                    e.append(float(data[2]))
+                    eq.append(0.01*float(data[0]))
+                except:
+                    pass
+
+            
     x = np.array(x)
     y = np.array(y)
     e = np.array(e)
